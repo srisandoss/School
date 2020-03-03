@@ -34,30 +34,28 @@ import * as types from "../actionTypes";
 
 // Init
 const initialState = {
-  student: {}
+  course: {}
 };
 
 // Reducer
-export default function StudentEditEditReducer(state = JSON.parse(JSON.stringify(initialState)), action) {
+export default function CourseEditEditReducer(state = JSON.parse(JSON.stringify(initialState)), action) {
   switch (action.type) { 
     
     // Insert here your custom reducers
 
 
     // START REDUCERS
-    case types.CREATE_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.UPDATE_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.GET_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.FINDBY_STUDENT_TEACHER_SUCCESS:
+    case types.CREATE_COURSE_SUCCESS:
+      return { ...state, course: action.payload };
+    case types.UPDATE_COURSE_SUCCESS:
+      return { ...state, course: action.payload };
+    case types.GET_COURSE_SUCCESS:
+      return { ...state, course: action.payload };
+    case types.FINDBY_COURSE_TEACHER_SUCCESS:
       return { ...state, listTeacher: action.payload };
-    case types.FINDBY_STUDENT_EVENTS_SUCCESS:
-      return { ...state, listEvents: action.payload };
      // END REDUCERS
     
-    case types.RESET_STUDENT:
+    case types.RESET_COURSE:
       state = initialState;
       return state;
     default:

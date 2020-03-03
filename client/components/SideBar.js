@@ -57,6 +57,24 @@ export default class SideBar extends Component {
           </ListItem>
           {/* START MY SCREENS */}
  
+          <ListItem onPress={() => this.props.navigation.navigate("CourseList")}>
+            <IconMaterial
+              name="keyboard-arrow-right"
+              size={20}
+              style={styles.icons}
+            />
+            <Text>List Course</Text>
+          </ListItem>
+          
+          <ListItem onPress={() => this.props.navigation.navigate("EventsList")}>
+            <IconMaterial
+              name="keyboard-arrow-right"
+              size={20}
+              style={styles.icons}
+            />
+            <Text>List Events</Text>
+          </ListItem>
+          
           <ListItem onPress={() => this.props.navigation.navigate("StudentList")}>
             <IconMaterial
               name="keyboard-arrow-right"
@@ -64,6 +82,15 @@ export default class SideBar extends Component {
               style={styles.icons}
             />
             <Text>List Student</Text>
+          </ListItem>
+          
+          <ListItem onPress={() => this.props.navigation.navigate("TeacherList")}>
+            <IconMaterial
+              name="keyboard-arrow-right"
+              size={20}
+              style={styles.icons}
+            />
+            <Text>List Teacher</Text>
           </ListItem>
           {/* END MY SCREENS */}
 

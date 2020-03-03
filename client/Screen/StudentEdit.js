@@ -61,6 +61,8 @@ import { connect } from "react-redux";
 
 // START IMPORT ACTIONS
 import StudentActions from "../redux/actions/StudentActions";
+import TeacherActions from "../redux/actions/TeacherActions";
+import EventsActions from "../redux/actions/EventsActions";
 
 // END IMPORT ACTIONS
 
@@ -76,6 +78,14 @@ import StudentActions from "../redux/actions/StudentActions";
 * actionsStudent.get
 *	@description CRUD ACTION get
 *	@returns Student
+*
+* actionsTeacher.findBy_student
+*	@description CRUD ACTION findBy_student
+*	@param Objectid key - Id of model to search for
+*
+* actionsEvents.findBy_student
+*	@description CRUD ACTION findBy_student
+*	@param Objectid key - Id of model to search for
 *
 
 **/

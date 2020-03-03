@@ -32,10 +32,16 @@
 import { combineReducers } from "redux";
 
 // START IMPORT REDUCERS
+import CourseEditReducer from "./CourseEditReducer";
+import CourseListReducer from "./CourseListReducer";
+import EventsEditReducer from "./EventsEditReducer";
+import EventsListReducer from "./EventsListReducer";
 import HomeReducer from "./HomeReducer";
 import StudentReducer from "./StudentReducer";
 import StudentEditReducer from "./StudentEditReducer";
 import StudentListReducer from "./StudentListReducer";
+import TeacherEditReducer from "./TeacherEditReducer";
+import TeacherListReducer from "./TeacherListReducer";
 
 // END IMPORT REDUCERS
 
@@ -55,10 +61,16 @@ const rootReducer = combineReducers({
   UserListReducer,
 
   // START COMBINE REDUCERS
+	CourseEditReducer,
+	CourseListReducer,
+	EventsEditReducer,
+	EventsListReducer,
 	HomeReducer,
 	StudentReducer,
 	StudentEditReducer,
 	StudentListReducer,
+	TeacherEditReducer,
+	TeacherListReducer,
  // END COMBINE REDUCERS
 
 });

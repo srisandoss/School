@@ -58,7 +58,10 @@ import SecurityController from "../controllers/SecurityController";
 import Database_School_db from "./Database_School_db.js";
 
 // Controllers
+import CourseController from "../controllers/School_db/CourseController";
+import EventsController from "../controllers/School_db/EventsController";
 import StudentController from "../controllers/School_db/StudentController";
+import TeacherController from "../controllers/School_db/TeacherController";
 import UserController from "../controllers/School_db/UserController";
 
 // End Import Controllers
@@ -140,7 +143,10 @@ class Server {
     SecurityController.init(router);
 
     // Start Init Controllers
+		CourseController.init(router);
+		EventsController.init(router);
 		StudentController.init(router);
+		TeacherController.init(router);
 		UserController.init(router);
 		 // End Init Controllers
 

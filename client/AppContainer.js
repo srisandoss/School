@@ -41,9 +41,15 @@ import ChangePwd from "./Screen/ChangePwd";
 
 /* START MY SCREENS IMPORT */
 
+import CourseEdit from "./Screen/CourseEdit";
+import CourseList from "./Screen/CourseList";
+import EventsEdit from "./Screen/EventsEdit";
+import EventsList from "./Screen/EventsList";
 import Student from "./Screen/Student";
 import StudentEdit from "./Screen/StudentEdit";
 import StudentList from "./Screen/StudentList";
+import TeacherEdit from "./Screen/TeacherEdit";
+import TeacherList from "./Screen/TeacherList";
 
 /* END MY SCREENS IMPORT */
 
@@ -62,9 +68,15 @@ class AppContainer extends Component {
 
         /* START MY SCREENS */
 
+    CourseEdit: { screen: CourseEdit },
+    CourseList: { screen: CourseList },
+    EventsEdit: { screen: EventsEdit },
+    EventsList: { screen: EventsList },
     Student: { screen: Student },
     StudentEdit: { screen: StudentEdit },
     StudentList: { screen: StudentList },
+    TeacherEdit: { screen: TeacherEdit },
+    TeacherList: { screen: TeacherList },
     
      /* END MY SCREENS */
       },

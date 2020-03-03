@@ -75,7 +75,9 @@ const generatedModel = {
         required: true
       },
       roles: [{
-        type: "String"
+        type: "String", 
+        required: true,
+        enum: ["parent", "staff", "superadmin", "teacher"], 
       }],
       surname: {
         type: "String"
@@ -89,6 +91,10 @@ const generatedModel = {
       
       // EXTERNAL RELATIONS
       /*
+      _user: [{
+        type: Schema.ObjectId,
+        ref: "Events"
+      }],
       */
     });
 

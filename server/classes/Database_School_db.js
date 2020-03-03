@@ -38,7 +38,10 @@ import properties from "../properties.js";
 
 // Start Import Models
 
+import CourseModel from "../models/School_db/CourseModel";
+import EventsModel from "../models/School_db/EventsModel";
 import StudentModel from "../models/School_db/StudentModel";
+import TeacherModel from "../models/School_db/TeacherModel";
 import UserModel from "../models/School_db/UserModel";
 
 // End Import Models
@@ -55,7 +58,10 @@ class Database {
 
     // Start Init Models
 
+		CourseModel.init();
+		EventsModel.init();
 		StudentModel.init();
+		TeacherModel.init();
 		UserModel.init();
  // End Init Models
   }

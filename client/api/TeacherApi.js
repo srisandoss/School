@@ -29,38 +29,31 @@
 * You will get 10% discount for each one of your friends
 * 
 */
+import TeacherApiGenerated from "./generated/TeacherApiGenerated";
+
 // Dependencies
-import * as types from "../actionTypes";
+//import axios from "axios";
+//import { properties } from "../config/properties";
 
-// Init
-const initialState = {
-  student: {}
-};
+class TeacherApi extends TeacherApiGenerated {
+  // You can customize the base actions overriding the object "actionsFunction" as shown in the example below:
+  /** 
+  // EXAMPLE:
+ 
+  // Get Teacher List
+  static getTeacherList() {
+    console.log("This is my custom API");
 
-// Reducer
-export default function StudentEditEditReducer(state = JSON.parse(JSON.stringify(initialState)), action) {
-  switch (action.type) { 
-    
-    // Insert here your custom reducers
-
-
-    // START REDUCERS
-    case types.CREATE_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.UPDATE_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.GET_STUDENT_SUCCESS:
-      return { ...state, student: action.payload };
-    case types.FINDBY_STUDENT_TEACHER_SUCCESS:
-      return { ...state, listTeacher: action.payload };
-    case types.FINDBY_STUDENT_EVENTS_SUCCESS:
-      return { ...state, listEvents: action.payload };
-     // END REDUCERS
-    
-    case types.RESET_STUDENT:
-      state = initialState;
-      return state;
-    default:
-      return state;
+    return fetch("http://localhost:3000/api/teachers")
+      .then(response => {
+        return response.json();
+      })
+      .catch(error => {
+        throw error;
+      });
   }
+  */
+
 }
+
+export default TeacherApi;
