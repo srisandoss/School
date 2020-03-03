@@ -29,38 +29,29 @@
 * You will get 10% discount for each one of your friends
 * 
 */
-import { combineReducers } from "redux";
+// Dependencies
+import * as types from "../actionTypes";
 
-// START IMPORT REDUCERS
-import HomeReducer from "./HomeReducer";
-import StudentReducer from "./StudentReducer";
-import StudentEditReducer from "./StudentEditReducer";
-import StudentListReducer from "./StudentListReducer";
+// Init
+const initialState = {
+  list: []
+};
 
-// END IMPORT REDUCERS
+// Reducer
+export default function StudentListReducer(state = initialState, action) {
+  switch (action.type) {
+    
+    // Insert here your custom reducers
 
 
-// CUSTOM REDUCERS
-import LoginReducer from "./LoginReducer";
-import ProfileReducer from "./ProfileReducer";
-import UserEditReducer from "./UserEditReducer";
-import UserListReducer from "./UserListReducer";
-
-const rootReducer = combineReducers({
-  
-  // INSERT HERE YOUR CUSTOM REDUCERS
-  LoginReducer,
-  ProfileReducer,
-  UserEditReducer,
-  UserListReducer,
-
-  // START COMBINE REDUCERS
-	HomeReducer,
-	StudentReducer,
-	StudentEditReducer,
-	StudentListReducer,
- // END COMBINE REDUCERS
-
-});
-
-export default rootReducer;
+    // START REDUCERS
+    case types.DELETE_STUDENT_SUCCESS:
+      return { ...state, student: action.payload };
+    case types.LIST_STUDENT_SUCCESS:
+      return { ...state, listStudent: action.payload };
+     // END REDUCERS
+    
+    default:
+      return state;
+  }
+}

@@ -42,6 +42,8 @@ import ChangePwd from "./Screen/ChangePwd";
 /* START MY SCREENS IMPORT */
 
 import Student from "./Screen/Student";
+import StudentEdit from "./Screen/StudentEdit";
+import StudentList from "./Screen/StudentList";
 
 /* END MY SCREENS IMPORT */
 
@@ -61,6 +63,8 @@ class AppContainer extends Component {
         /* START MY SCREENS */
 
     Student: { screen: Student },
+    StudentEdit: { screen: StudentEdit },
+    StudentList: { screen: StudentList },
     
      /* END MY SCREENS */
       },

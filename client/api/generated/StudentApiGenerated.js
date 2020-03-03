@@ -73,6 +73,22 @@ class StudentApiGenerated {
   }
 
   /**
+  * StudentService.delete
+  *   @description CRUD ACTION delete
+  *   @param ObjectId id Id
+  *
+  */
+  static deleteStudent(id) {
+    return axios.delete(StudentApiGenerated.contextUrl + "/" + id)
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  /**
   * StudentService.get
   *   @description CRUD ACTION get
   *   @returns Student
@@ -80,6 +96,37 @@ class StudentApiGenerated {
   */
   static getOneStudent(id) {
     return axios.get(StudentApiGenerated.contextUrl + "/" + id)
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  /**
+  * StudentService.list
+  *   @description CRUD ACTION list
+  *
+  */
+  static getStudentList() {
+    return axios.get(StudentApiGenerated.contextUrl)
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  /**
+  * StudentService.update
+  *   @description CRUD ACTION update
+  *   @param ObjectId id Id
+  *
+  */
+  static saveStudent(student) {
+    return axios.post(StudentApiGenerated.contextUrl + "/" + student._id, student )
       .then(response => {
         return response.data;
       })

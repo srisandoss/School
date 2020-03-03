@@ -78,6 +78,25 @@ let actionsFunction = {
   },
 
 
+  // Delete student
+  deleteStudent: function(id) {
+    return function(dispatch) {
+      return StudentApi
+        .deleteStudent(id)
+        .then(student => {
+          dispatch(actionsFunction.deleteStudentSuccess(student));
+        })
+        .catch(error => {
+          throw error;
+        });
+    };
+  },
+
+  deleteStudentSuccess: function(student) {
+    return { type: types.DELETE_STUDENT_SUCCESS, payload: student };
+  },
+
+
   // Get student
   loadStudent: function(id) {
     return function(dispatch) {
@@ -94,6 +113,43 @@ let actionsFunction = {
 
   loadStudentSuccess: function(student) {
     return { type: types.GET_STUDENT_SUCCESS, payload: student };
+  },
+
+  // Load  list
+  loadStudentList: function() {
+    return function(dispatch) {
+      return StudentApi
+        .getStudentList()
+        .then(list => {
+          dispatch(actionsFunction.loadStudentListSuccess(list));
+        })
+        .catch(error => {
+          throw error;
+        });
+    };
+  },
+
+  loadStudentListSuccess: function(list) {
+    return { type: types.LIST_STUDENT_SUCCESS, payload: list };
+  },
+
+	
+  // Save student
+  saveStudent: function(student) {
+    return function(dispatch) {
+      return StudentApi
+        .saveStudent(student)
+        .then(student => {
+          dispatch(actionsFunction.saveStudentSuccess(student));
+        })
+        .catch(error => {
+          throw error;
+        });
+    };
+  },
+
+  saveStudentSuccess: function(student) {
+    return { type: types.UPDATE_STUDENT_SUCCESS, payload: student };
   },
 
 

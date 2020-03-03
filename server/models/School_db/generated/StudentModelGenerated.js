@@ -64,16 +64,37 @@ const generatedModel = {
       * Student
       */
     const studentSchema = new mongoose.Schema({
-      AadharNo: {
+      aadharNo: {
         type: "String"
       },
-      DOB: {
+      address: {
+        type: "String"
+      },
+      allergy: {
+        type: "String"
+      },
+      bloodGroup: {
+        type: "String"
+      },
+      dob: {
         type: "Date", 
         required: true
       },
-      FullName: {
+      fatherMobileNo: {
+        type: "Number"
+      },
+      fatherName: {
+        type: "String"
+      },
+      fullName: {
         type: "String", 
         required: true
+      },
+      motherMobileNo: {
+        type: "Number"
+      },
+      motherName: {
+        type: "String"
       },
       // RELATIONS
       
@@ -119,6 +140,16 @@ const generatedModel = {
   },
   
   /**
+  * StudentModel.delete
+  *   @description CRUD ACTION delete
+  *   @param ObjectId id Id
+  *
+  */
+  async delete(id) {
+    return await generatedModel.model.findByIdAndRemove(id);
+  },
+  
+  /**
   * StudentModel.get
   *   @description CRUD ACTION get
   *   @returns Student
@@ -126,6 +157,25 @@ const generatedModel = {
   */
   async get(id) {
     return await generatedModel.model.findOne({ _id : id });
+  },
+  
+  /**
+  * StudentModel.list
+  *   @description CRUD ACTION list
+  *
+  */
+  async list() {
+    return await generatedModel.model.find();
+  },
+  
+  /**
+  * StudentModel.update
+  *   @description CRUD ACTION update
+  *   @param ObjectId id Id
+  *
+  */
+  async update(item) { 
+    return await generatedModel.model.findOneAndUpdate({ _id: item._id }, item, {'new': true});
   },
   
 

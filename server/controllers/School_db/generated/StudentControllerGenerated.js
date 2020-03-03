@@ -59,7 +59,10 @@ const generatedControllers = {
   init: router => {
     const baseUrl = `${Properties.api}/student`;
     router.post(baseUrl + "", authorize([]), StudentController.create);
+    router.delete(baseUrl + "/:id", authorize([]), StudentController.delete);
     router.get(baseUrl + "/:id", authorize([]), StudentController.get);
+    router.get(baseUrl + "", authorize([]), StudentController.list);
+    router.post(baseUrl + "/:id", authorize([]), StudentController.update);
   },
 
 
@@ -82,6 +85,22 @@ const generatedControllers = {
   },
   
   /**
+  * StudentModel.delete
+  *   @description CRUD ACTION delete
+  *   @param ObjectId id Id
+  *
+  */
+  delete: async (req, res) => {
+    try {
+      const result = await StudentModel.delete(req.params.id);
+      res.json(result);
+    } catch (err) {
+      const safeErr = ErrorManager.getSafeError(err);
+      res.status(safeErr.status).json(safeErr);
+    }
+  },
+  
+  /**
   * StudentModel.get
   *   @description CRUD ACTION get
   *   @returns Student
@@ -90,6 +109,38 @@ const generatedControllers = {
   get: async (req, res) => {
     try {
       const result = await StudentModel.get(req.params.id);
+      res.json(result);
+    } catch (err) {
+      const safeErr = ErrorManager.getSafeError(err);
+      res.status(safeErr.status).json(safeErr);
+    }
+  },
+  
+  /**
+  * StudentModel.list
+  *   @description CRUD ACTION list
+  *
+  */
+  list: async (req, res) => {
+    try {
+      const result = await StudentModel.list();
+      res.json(result);
+    } catch (err) {
+      const safeErr = ErrorManager.getSafeError(err);
+      res.status(safeErr.status).json(safeErr);
+    }
+  },
+  
+  
+  /**
+  * StudentModel.update
+  *   @description CRUD ACTION update
+  *   @param ObjectId id Id
+  *
+  */
+  update: async (req, res) => {
+    try {
+      const result = await StudentModel.update(req.body);
       res.json(result);
     } catch (err) {
       const safeErr = ErrorManager.getSafeError(err);
